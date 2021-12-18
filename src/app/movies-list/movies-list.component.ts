@@ -81,6 +81,18 @@ export class MoviesListComponent implements OnInit {
       "movieImg":"https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
     }
   ]
+
+  isClicked:boolean=false;
+  movieObj:any;
+
+  getMovie(movie:any)
+  {
+    this.isClicked=!this.isClicked;
+    this.movieObj=movie;
+    console.log(this.movieObj.title);
+  }
+
+
   constructor() { }
 
   ngOnInit(): void {

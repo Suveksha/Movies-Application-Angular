@@ -1,5 +1,6 @@
+<app-banner [getObj]="movieObj" [getClick]="isClicked"></app-banner>
 <ul>
-    <li *ngFor="let movie of moviesList">
+    <li *ngFor="let movie of moviesList" (click)="getMovie(movie)">
         <div ngClass="movies-img">
             <img src={{movie.movieImg}} alt={{movie.title}}>
         </div>

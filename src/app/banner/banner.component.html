@@ -1,0 +1,24 @@
+<div *ngIf="getClick then MovieBanner else NoBanner"></div>
+<ng-template #MovieBanner>
+    <div ngClass="bannerParent">
+        <div ngClass="banner-img">
+            <img src={{getObj.movieImg}} alt={{getObj.title}}>
+        </div>
+        <div ngClass="banner-title">
+            Title: {{getObj.title}}
+        </div>
+        <div ngClass="banner-genre">
+            Genre: {{getObj.genre.name}}
+        </div>
+        <div ngClass="banner-price">
+            Price: {{getObj.dailyRentalRate | currency:"USD"}}
+        </div>
+    </div>
+    
+</ng-template>
+
+<ng-template #NoBanner>
+    <div ngClass="nobanner" (click)="clickMe()">
+        <img src="https://img.freepik.com/free-vector/cinema-movie-time-banner-with-icons-popcorn-masks-3d-glasses-tickets-illustration_108855-2103.jpg?size=626&ext=jpg" alt="default-image">
+    </div>
+</ng-template>
